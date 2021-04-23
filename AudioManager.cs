@@ -54,5 +54,6 @@ public class AudioManager : Singleton<AudioManager>
         audioInstance.Play();               //재생
 
         Destroy(audioInstance.gameObject, audioClip.length);       //오디오클립을 재생 후 인스턴스 삭제
+        PoolingManager.Instance.SetPool(audioInstance.gameObject, "Audio", audioClip.length);       // 만약 PoolingManager를 사용하고 있다면 위에 Destroy를 지운뒤 이것 사용
     }
 }
