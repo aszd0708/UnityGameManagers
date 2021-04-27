@@ -55,6 +55,7 @@ public class PoolingManager : Singleton<PoolingManager>
     {
         yield return new WaitForSeconds(time);
         SetPool(setPoolObj, typeName);
+        yield break;
     }
 
     // 풀링되었던 오브젝트를 갖고오는 함수
