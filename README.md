@@ -1,6 +1,11 @@
 # UnityGameManagers
 
+대부분 파일 안에 주석으로 함수 설명 되어 있습니다.
+간단히 사용법 적어 놨습니다.
+
 ## Managers
+
+이름을 누르면 설명이 나옵니다.
 
 ### [PoolingManager](ManagersMarkDown/PoolingManager.md)
 
