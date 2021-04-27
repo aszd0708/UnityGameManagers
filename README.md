@@ -17,7 +17,7 @@
 
 ### [SaveData](ManagersMarkDown/SaveDataManger.md)
 
-### Sington
+### Singleton
 자주 사용하기 때문에 클래스를 따로 만들어 사용함 만약 싱글톤으로 사용하고 싶은 경우 상속해서 사용하며 Awake를 사용하고 싶을땐 오버라이딩 하여 사용
 
 ### JsonManager
