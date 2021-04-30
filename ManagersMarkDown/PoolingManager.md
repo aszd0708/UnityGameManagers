@@ -1,7 +1,14 @@
 ### PoolingManager
-SetPool 을 사용해서 오브젝트를 SetActive(false)를 시킨 다음 SetPool에 있던 PoolingName 으로 새로운 카테고리를 만들어 넣어줌 만약 카테고리가 있을경우 그 카테고리로 넣어줌
-그리고 GetPool을 사용해서 원하는 카테고리에 있는 오브젝트를 가져올 수 있음 만약 없을경우 null을 반환
-사용시 받아올때 null을 받을 경우 null을 체크 한 뒤 원하는 오브젝트 생성해서 사용
+
+SetPool 을 사용해서 오브젝트를 SetActive(false)를 시킨 다음 SetPool에 있던 PoolingName 으로 새로운 카테고리를 만들어 넣어줍니다.
+
+ 만약 카테고리가 있을경우 그 카테고리로 넣어줍니다.
+
+
+그리고 GetPool을 사용해서 원하는 카테고리에 있는 오브젝트를 가져올 수 있음 만약 없을경우 null을 반환 합니다.
+
+
+사용시 받아올때 null을 체크 한 뒤 null을 받게 되면 원하는 오브젝트 생성해서 사용 하면 됩니다.
 
 #### SetPool
 ```
@@ -11,7 +18,7 @@ public void SetPool(GameObject setPoolObj, string typeName)
         setPoolObj.SetActive(false);
     }
 ```
-SetPooling 을 사용하여 풀링 타입 검사 후 없으면 타입을 만들고 있으면 그 타입에 자식으로 만들어 넣음
+SetPooling 을 사용하여 풀링 타입 검사 후 없으면 타입을 만들고 있으면 그 타입에 자식으로 만들어 넣습니다.
 
 ```
 public void SetPool(GameObject setPoolObj, string typeName, float time)
@@ -26,7 +33,8 @@ public void SetPool(GameObject setPoolObj, string typeName, float time)
         yield break;
     }
 ```
-뒤에 시간을 넣으면 그 시간 뒤에 풀링을 시켜줌
+뒤에 시간을 넣게 되면, 
+ 코루틴으로 타이머가 돈 뒤 풀링을 시켜줍니다.
 
 #### GetPool
 ```
@@ -50,4 +58,4 @@ public void SetPool(GameObject setPoolObj, string typeName, float time)
         return getPoolObj;
     }
 ```
-풀링 타입을 입력하면 맨 위에 있는 오브젝트를 꺼내줌
+풀링 타입을 입력하면 맨 위에 있는 오브젝트를 꺼내줍니다.
