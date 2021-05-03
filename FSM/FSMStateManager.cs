@@ -9,12 +9,9 @@ public class FSMStateManager : MonoBehaviour
     protected FSMState curState;
 
     private Dictionary<string, FSMState> stateMachine = new Dictionary<string, FSMState>();
-
-    [Header("플레이어 레이어 솔까 필요 ㄴㄴ")]
-    public LayerMask playerLayer;
+    protected Dictionary<string, FSMState> StateMachine { get => stateMachine; set => stateMachine = value; }
 
     protected FSMState CurState { get => curState; set => curState = value; }
-    protected Dictionary<string, FSMState> StateMachine { get => stateMachine; set => stateMachine = value; }
 
     protected Transform target;
 
@@ -65,7 +62,10 @@ public class FSMStateManager : MonoBehaviour
     /// </summary>
     public virtual void FSMUpdate()
     {
-        if (curState != null) curState.OnExecute(target.gameObject);
+        if (curState != null)
+        {
+            curState.OnExecute(target.gameObject);
+        }
     }
 
     /// <summary>
@@ -78,11 +78,11 @@ public class FSMStateManager : MonoBehaviour
         if (obj == null) obj = gameObject;
 
         // 현재상태랑 바꾸려는 상태가 같다면 
-        if (curState == changeState) return;
+        if (curState == changeState) { return; }
         // 바꾸려는 상태가 없다면
-        if (changeState == null) return;
+        if (changeState == null) { return; }
         // 현재 상태가 없지 않다면 Exit시킴
-        if (curState != null) curState.OnExit(obj);
+        if (curState != null) { curState.OnExit(obj); }
 
         // Exit후 현재 상태를 바꾸려는 상태로 전환 후 Enter실행
         curState = changeState;
